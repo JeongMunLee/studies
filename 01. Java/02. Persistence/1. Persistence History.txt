@@ -1,0 +1,28 @@
+JDBC
+     JDBC 등장 Java의 DB 연결 표준 인터페이지!!!! (Driver Manage가 이를 구현함.)
+	Driver Manager -> Connection 생성-> Statement생성 -> ResultSet생성
+     단점 : 중복 코드 / 쿼리를 일일이 생성 / 커넥션을 매번 생성해야됨
+
+SQLMAPPER (MyBatis - Spring JDBC)
+	Spring JDBC - JDBC Template / RowMapper 
+    		DAO (Application) - Spring JDBC (JDBC Interface) + Configuration (접속 정보 ..) - JDBC Driver - DATABASE (Persistence Layer)
+	MyBatis - Query 문의 분리가 목표 (XML로 이전)
+ 			  Spring JDBC의 Mapper도 분리 
+	
+
+ORM (JPA, Hibernate)
+	Database은 객체 지향에 어울리지 않음.  (캡슐화 / 협력 / 의존/ 정보은닉 ... 등등 )
+	논리적으로 엔티티와 SQL은 강한 의존 관계를 가지고 있음. 
+	-> ORM의 등장 (Hibernate / EclipseLink / DataNucleus)
+		EntityManager
+		Persistence Context
+    		쿼리 자체를 관리 안함. Context를 통해 동적으로 쿼리를 생성하여 실행 함. 
+			핵심 개념 
+				Lazy Loading
+				Dirty Checking
+				Caching
+	JPA
+	Hipernate
+	Spring Data JPA
+		Lazy Loading / Dirty Checking / Caching 사용하지 말자
+		Simple Limited Opinionated ORM
